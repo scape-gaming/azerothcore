@@ -140,11 +140,18 @@ public:
             { "spell_target_position",        SEC_ADMINISTRATOR, true,  &HandleReloadSpellTargetPositionCommand,        "" },
             { "spell_threats",                SEC_ADMINISTRATOR, true,  &HandleReloadSpellThreatsCommand,               "" },
             { "spell_group_stack_rules",      SEC_ADMINISTRATOR, true,  &HandleReloadSpellGroupStackRulesCommand,       "" },
-            { "acore_string",                 SEC_ADMINISTRATOR, true,  &HandleReloadAcoreStringCommand,              "" },
+            { "acore_string",               SEC_ADMINISTRATOR, true,  &HandleReloadAcoreStringCommand,              "" },
             { "warden_action",                SEC_ADMINISTRATOR, true,  &HandleReloadWardenactionCommand,               "" },
             { "waypoint_scripts",             SEC_ADMINISTRATOR, true,  &HandleReloadWpScriptsCommand,                  "" },
             { "waypoint_data",                SEC_ADMINISTRATOR, true,  &HandleReloadWpCommand,                         "" },
             { "vehicle_accessory",            SEC_ADMINISTRATOR, true,  &HandleReloadVehicleAccessoryCommand,           "" },
+	    { "item_template",                SEC_ADMINISTRATOR, true,  &HandleReloadItemTemplateCommand,               "" },
+            { "full_creaturetemplate",        SEC_ADMINISTRATOR, true,  &HandleReloadFullCreatureTemplateCommand,       "" },
+	    { "gameobject_template",        SEC_ADMINISTRATOR, true,  &HandleReloadGameObjectTemplateCommand,       "" },
+            { "creature_template_addon",      SEC_ADMINISTRATOR, true,  &HandleReloadCreatureTemplateAddonCommand,       "" },
+	    { "creature",      SEC_ADMINISTRATOR, true,  &HandleReloadCreaturesCommand,       "" },
+	    { "creature_equip_template",      SEC_ADMINISTRATOR, true,  &HandleReloadCreatureEquipTemplateCommand,       "" },
+	    { "creature_model_info",      SEC_ADMINISTRATOR, true,  &HandleReloadCreatureModelInfoCommand,       "" },
             { "vehicle_template_accessory",   SEC_ADMINISTRATOR, true,  &HandleReloadVehicleTemplateAccessoryCommand,   "" }
         };
         static std::vector<ChatCommand> commandTable =
@@ -1224,6 +1231,60 @@ public:
         handler->SendGlobalGMSysMessage("Vehicle template accessories reloaded.");
         return true;
     }
+
+	   static bool HandleReloadCreatureTemplateAddonCommand(ChatHandler* handler, const char* /*args*/)
+    {
+        sLog->outString("Re-Loading full creature template addon...");
+        sObjectMgr->LoadCreatureTemplateAddons();
+        handler->SendGlobalGMSysMessage("|cff6C8CD5#|cFFFF0000 DB table|r creature_template_addon |cFFFF0000has reloaded.|r");
+        return true;
+    }
+    static bool HandleReloadCreaturesCommand(ChatHandler* handler, const char* /*args*/)
+    {
+        sLog->outString("Re-Loading all creature spawns...");
+        sObjectMgr->LoadCreatures();
+        handler->SendGlobalGMSysMessage("|cff6C8CD5#|cFFFF0000 DB table|r creature spawns|cFFFF0000 have reloaded.|r");
+        return true;
+    }
+	    static bool HandleReloadItemTemplateCommand(ChatHandler* handler, const char* /*args*/)
+    {
+        sLog->outString("Re-Loading item template...");
+        sObjectMgr->LoadItemTemplates();
+        handler->SendGlobalGMSysMessage("|cff6C8CD5#|cFFFF0000 DB table|r item_template |cFFFF0000has reloaded.|r");
+        return true;
+	}
+	
+    static bool HandleReloadFullCreatureTemplateCommand(ChatHandler* handler, const char* /*args*/)
+    {
+        sLog->outString("Re-Loading full creature template...");
+        sObjectMgr->LoadCreatureTemplates();
+        handler->SendGlobalGMSysMessage("|cff6C8CD5#|cFFFF0000 DB table|r full creature_template |cFFFF0000has reloaded.|r");
+        return true;
+    }
+    
+static bool HandleReloadGameObjectTemplateCommand(ChatHandler* handler, const char* /*args*/)
+    {
+        sLog->outString("Re-Loading Game Object template...");
+        sObjectMgr->LoadGameObjectTemplate();
+        handler->SendGlobalGMSysMessage("|cff6C8CD5#|cFFFF0000 DB table|r Game Object Template |cFFFF0000has reloaded.|r");
+        return true;
+    }
+static bool HandleReloadCreatureEquipTemplateCommand(ChatHandler* handler, const char* /*args*/)
+    {
+        sLog->outString("Re-Loading Creature Equip template...");
+        sObjectMgr->LoadEquipmentTemplates();
+        handler->SendGlobalGMSysMessage("|cff6C8CD5#|cFFFF0000 DB table|r Creature Equip Template |cFFFF0000has reloaded.|r");
+        return true;
+    }
+static bool HandleReloadCreatureModelInfoCommand(ChatHandler* handler, const char* /*args*/)
+    {
+        sLog->outString("Re-Loading Creature Model info...");
+        sObjectMgr->LoadCreatureModelInfo();
+        handler->SendGlobalGMSysMessage("|cff6C8CD5#|cFFFF0000 DB table|r Creature Model Info |cFFFF0000has reloaded.|r");
+        return true;
+    }
+
+
 
     static bool HandleReloadGameGraveyardCommand(ChatHandler* handler, const char* /*args*/)
     {
