@@ -17,7 +17,7 @@ EndContentData */
 //#include "ScriptMgr.h"
 //#include "ScriptedCreature.h"
 
-/*void AddSC_alterac_mountains()
+void AddSC_alterac_mountains()
 {
-    Script* newscript;
-}*/
+
+}
