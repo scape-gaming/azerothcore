@@ -145,13 +145,13 @@ public:
             { "waypoint_scripts",             SEC_ADMINISTRATOR, true,  &HandleReloadWpScriptsCommand,                  "" },
             { "waypoint_data",                SEC_ADMINISTRATOR, true,  &HandleReloadWpCommand,                         "" },
             { "vehicle_accessory",            SEC_ADMINISTRATOR, true,  &HandleReloadVehicleAccessoryCommand,           "" },
-	    { "item_template",                SEC_ADMINISTRATOR, true,  &HandleReloadItemTemplateCommand,               "" },
+	        { "item_template",                SEC_ADMINISTRATOR, true,  &HandleReloadItemTemplateCommand,               "" },
             { "full_creaturetemplate",        SEC_ADMINISTRATOR, true,  &HandleReloadFullCreatureTemplateCommand,       "" },
-	    { "gameobject_template",        SEC_ADMINISTRATOR, true,  &HandleReloadGameObjectTemplateCommand,       "" },
+	        { "gameobject_template",        SEC_ADMINISTRATOR, true,  &HandleReloadGameObjectTemplateCommand,       "" },
             { "creature_template_addon",      SEC_ADMINISTRATOR, true,  &HandleReloadCreatureTemplateAddonCommand,       "" },
-	    { "creature",      SEC_ADMINISTRATOR, true,  &HandleReloadCreaturesCommand,       "" },
-	    { "creature_equip_template",      SEC_ADMINISTRATOR, true,  &HandleReloadCreatureEquipTemplateCommand,       "" },
-	    { "creature_model_info",      SEC_ADMINISTRATOR, true,  &HandleReloadCreatureModelInfoCommand,       "" },
+	        { "creature",      SEC_ADMINISTRATOR, true,  &HandleReloadCreaturesCommand,       "" },
+	        { "creature_equip_template",      SEC_ADMINISTRATOR, true,  &HandleReloadCreatureEquipTemplateCommand,       "" },
+            { "creature_model_info",      SEC_ADMINISTRATOR, true,  &HandleReloadCreatureModelInfoCommand,       "" },
             { "vehicle_template_accessory",   SEC_ADMINISTRATOR, true,  &HandleReloadVehicleTemplateAccessoryCommand,   "" }
         };
         static std::vector<ChatCommand> commandTable =
