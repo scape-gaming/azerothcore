@@ -5226,5 +5226,5 @@ void AddSC_generic_spell_scripts()
     new spell_gen_mount("spell_Mystic_Runesaber", 0, 1180545, 2180545, 3180545, 4180545, 0);
     new spell_gen_mount("spell_Grove_Warden", 0, 1189999, 2189999, 3189999, 4189999, 0);
     new spell_gen_mount("spell_Soaring_Skyterror", 0, 1191633, 2191633, 3191633, 4191633, 0);
-    new spell_gen_mount("spell_Darkmaster's_Charger", 0, 1200000, 2200000, 0, 0, 0);
+    new spell_gen_mount("spell_Darkmasters_Charger", 0, 1200000, 2200000, 0, 0, 0);
 }
