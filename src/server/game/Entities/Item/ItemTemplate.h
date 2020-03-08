@@ -514,10 +514,11 @@ enum ItemSubclassJunk
     ITEM_SUBCLASS_JUNK_OTHER                    = 4,
     ITEM_SUBCLASS_JUNK_MOUNT                    = 5,
     ITEM_SUBCLASS_JUNK_TOY                      = 6,
-    ITEM_SUBCLASS_JUNK_COSMETIC                 = 7
+    ITEM_SUBCLASS_JUNK_COSMETIC                 = 7,
+    ITEM_SUBCLASS_JUNK_HEARTHSTONE              = 8
 };
 
-#define MAX_ITEM_SUBCLASS_JUNK                    8
+#define MAX_ITEM_SUBCLASS_JUNK                    9
 
 enum ItemSubclassGlyph
 {
